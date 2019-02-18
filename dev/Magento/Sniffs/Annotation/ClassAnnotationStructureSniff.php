@@ -41,13 +41,13 @@ class ClassAnnotationStructureSniff implements Sniff
      * Validates whether annotation block exists for interface, abstract or final classes
      *
      * @param File $phpcsFile
-     * @param int $previousCommentClosePtr
-     * @param int $stackPtr
+     * @param  $previousCommentClosePtr
+     * @param  $stackPtr
      */
     private function validateInterfaceOrAbstractOrFinalClassAnnotationBlockExists(
         File $phpcsFile,
-        int $previousCommentClosePtr,
-        int $stackPtr
+         $previousCommentClosePtr,
+         $stackPtr
     ) : void {
         $tokens = $phpcsFile->getTokens();
         if ($tokens[$stackPtr]['type'] === 'T_CLASS') {
@@ -70,10 +70,10 @@ class ClassAnnotationStructureSniff implements Sniff
      * Validates whether annotation block exists
      *
      * @param File $phpcsFile
-     * @param int $previousCommentClosePtr
-     * @param int $stackPtr
+     * @param  $previousCommentClosePtr
+     * @param  $stackPtr
      */
-    private function validateAnnotationBlockExists(File $phpcsFile, int $previousCommentClosePtr, int $stackPtr) : void
+    private function validateAnnotationBlockExists(File $phpcsFile, $previousCommentClosePtr,  $stackPtr) : void
     {
         $tokens = $phpcsFile->getTokens();
         $this->validateInterfaceOrAbstractOrFinalClassAnnotationBlockExists(
